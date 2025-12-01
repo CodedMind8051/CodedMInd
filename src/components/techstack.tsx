@@ -3,7 +3,7 @@ import { SiReact, SiAndroid, SiTailwindcss, SiGit, SiFastapi, SiDjango, SiDocker
 
 function techstack() {
   return (
-    <div className='border shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md border-b-gray-800  bg-[#0f0f0f] rounded-3xl flex-wrap  max-[1350px]:w-[50%] max-[1000px]:w-[60%] max-[850px]:w-[70%] max-[650px]:w-[90%] max-[520px]:w-[100%] text-4xl flex   h-[100%] items-center justify-center gap-[7%] w-[40%]'>
+    <div className=' flex-wrap  max-[1350px]:w-[50%] max-[1000px]:w-[60%] max-[850px]:w-[70%] max-[650px]:w-[90%] max-[520px]:w-[100%] text-4xl flex   h-[100%] items-center justify-center gap-[7%] w-[40%]'>
       <SiReact className="  text-[#08dcff]  animate-bounce" />
       <SiTailwindcss className="  text-[#1dc0cd]  animate-bounce" />
       <SiNodedotjs className='text-[#85c00a]   animate-bounce  ' />
