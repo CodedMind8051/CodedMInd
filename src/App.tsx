@@ -2,6 +2,8 @@ import './App.css'
 import Navbar from './components/Navbar'
 import { Typewriter } from 'react-simple-typewriter'
 import Techstack from './components/techstack'
+import { LuFile, LuSend } from 'react-icons/lu'
+
 
 function App() {
 
@@ -27,6 +29,14 @@ function App() {
       </h1>
       <div className='gap-7  h-[20%] flex justify-center items-center max-[480px]:mt-6'>
         <Techstack />
+      </div>
+      <div className='flex gap-4 justify-center items-center  mt-10'>
+        <button className='text-white flex items-center justify-center w-[160px] gap-3 rounded bg-[#151515]  border-[2px]'>
+          <LuFile className='text-white' />  Resume/CV
+        </button>
+        <button className='text-black flex items-center justify-center w-[160px] gap-3 rounded bg-amber-50  border  border-[2px]'>
+         <LuSend /> Get in touch
+        </button>
       </div>
     </>
   )
