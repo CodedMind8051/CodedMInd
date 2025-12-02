@@ -1,9 +1,9 @@
 import './App.css'
 import Navbar from './components/Navbar'
-import { Typewriter } from 'react-simple-typewriter'
 import Techstack from './components/techstack'
+import Projects from './components/Projects'
 import { LuFile, LuSend } from 'react-icons/lu'
-
+import { Typewriter } from 'react-simple-typewriter'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
             loop={false}
             cursor={true}
             cursorStyle="|"
-            typeSpeed={50}
+            typeSpeed={80}
             deleteSpeed={50}
             delaySpeed={100000}
           />
@@ -35,9 +35,13 @@ function App() {
           <LuFile className='text-white' />  Resume/CV
         </button>
         <button className='text-black flex items-center justify-center w-[160px] gap-3 rounded bg-amber-50  border  border-[2px]'>
-         <LuSend /> Get in touch
+          <LuSend /> Get in touch
         </button>
       </div>
+      <div className='flex  justify-center m-7 h-[90%]'>
+        <Projects />
+      </div>
+ 
     </>
   )
 }
