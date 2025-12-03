@@ -38,7 +38,7 @@ function App() {
           <LuSend /> Get in touch
         </button>
       </div>
-      <div className='flex  justify-center m-7 h-[90%]'>
+      <div className='flex  justify-center m-7  h-[90%]'>
         <Projects />
       </div>
  
