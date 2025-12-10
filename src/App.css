@@ -4,6 +4,10 @@
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -22,9 +26,12 @@
 
 /* Premium animations */
 @keyframes glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     text-shadow: 0 0 10px rgba(134, 3, 220, 0.3), 0 0 20px rgba(11, 217, 200, 0.1);
   }
+
   50% {
     text-shadow: 0 0 20px rgba(134, 3, 220, 0.6), 0 0 40px rgba(11, 217, 200, 0.3);
   }
@@ -35,6 +42,7 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

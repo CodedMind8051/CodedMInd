@@ -134,7 +134,7 @@ function Projects() {
                 transition={{ duration: 1.2 }}
             >
                 <motion.h1 
-                    className="decoration-2 decoration-white justify-center flex items-center w-full h-[5%] mt-2.5 underline ml-2 text-[#f8f5f9]"
+                    className="decoration-2 decoration-white justify-center flex items-center w-full h-[5%] mt-3.5 p-5 underline ml-2 text-[#f8f5f9]"
                     initial={{ opacity: 0, y: -20, scale: 0.8 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 1.2 }}
