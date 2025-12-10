@@ -1,0 +1,150 @@
+/* Loading Animation Styles */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(134, 3, 220, 0.5), 0 0 40px rgba(11, 217, 200, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(134, 3, 220, 0.8), 0 0 60px rgba(11, 217, 200, 0.4);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(134, 3, 220, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(11, 217, 200, 0.6));
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Premium loading overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0e0d0d 0%, #1a1919 50%, #0e0d0d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Animated loader rings */
+.loader-rings {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 0 10px rgba(134, 3, 220, 0.3));
+}
+
+@media (max-width: 640px) {
+  .loader-rings {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-rings {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.loader-rings::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid transparent;
+  border-top-color: #8603dc;
+  border-right-color: #8603dc;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+.loader-rings::after {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  border: 3px solid transparent;
+  border-bottom-color: #0bd9c8;
+  border-left-color: #0bd9c8;
+  border-radius: 50%;
+  animation: spin-reverse 2.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .loading-container {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .loading-container {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-container {
+    gap: 12px;
+  }
+}
+

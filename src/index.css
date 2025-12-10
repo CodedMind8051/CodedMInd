@@ -12,7 +12,8 @@
   font-weight: 300;
   color-scheme: light dark;
   color: rgba(18, 17, 17, 0.87);
-  background-color: #0e0d0d;
+  background-color: #050505;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -52,6 +53,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+
 body {
   margin: 0;
   display: flex;
@@ -81,33 +83,93 @@ button:focus-visible {
 }
 
 .card {
-  border-radius: 10px;
+  border-radius: 12px;
   background-color: #171717;
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   outline-color: color-mix(in oklab, var(--ring)50%, transparent);
   border: solid 1px rgba(54, 53, 53, 0.329);
   width: 40%;
   height: 27%;
+  transition: all 0.4s ease;
 }
 
 
 @media (min-width:700px) {
-  .card{
-    
+  .card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
-@media  (max-width: 1000px) {
+@media (max-width: 1000px) {
   .card {
-    width: 40%;
+    width: 50%;
     height: 35%;
   }
 }
 
-@media  (max-width: 700px) {
+@media (max-width: 700px) {
   .card {
-    width: 40%;
+    width: 85%;
     height: 45%;
   }
 }
 
+/* Premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0e0d0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8603dc, #0bd9c8);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0bd9c8, #8603dc);
+}
+
+/* Selection styling */
+::selection {
+  background: #8603dc;
+  color: white;
+}
+
+::-moz-selection {
+  background: #8603dc;
+  color: white;
+}
+
+/* Link styling */
+a {
+  color: #fbfcfc;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #f9f6fa;
+}
+
+/* Input styling */
+input,
+textarea {
+  background: rgba(23, 23, 23, 0.8);
+  border: 1px solid rgba(134, 3, 220, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #0bd9c8;
+  box-shadow: 0 0 20px rgba(11, 217, 200, 0.2);
+  outline: none;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
