@@ -14,6 +14,17 @@ function Projects() {
     const [Cards] = useState<any>([])
     const [ProjectDetail] = useState<any>([{ Projectlogo, Name: "Forkyou" }, { Projectlogo, Name: "Forkyou" }])
 
+    const itemVariants = {
+        hidden: { opacity: 0, scale: 0.95, y: 20 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: { duration: 1.2 },
+        },
+    }
+
+
     const cardVariants = {
         hidden: { opacity: 0, y: 20, scale: 0.8 },
         visible: (i: number) => ({
@@ -30,21 +41,21 @@ function Projects() {
     for (let index = 0; index < 4; index++) {
         try {
             Cards.push(
-                <motion.div 
-                    key={index} 
+                <motion.div
+                    key={index}
                     custom={index}
                     initial="hidden"
                     animate="visible"
                     variants={cardVariants}
-                    whileHover={{ scale: 1.08, translateY: -8 }} 
+                    whileHover={{ scale: 1.08, translateY: -8 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="card hover:cursor-pointer"
                 >
                     <div className="overflow-hidden rounded-t-lg h-[38%] w-full relative group">
-                        <img  
-                            src={ProjectDetail[index].Projectlogo} 
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                            alt="" 
+                        <img
+                            src={ProjectDetail[index].Projectlogo}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            alt=""
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
@@ -77,7 +88,7 @@ function Projects() {
                     <div className="text-[15px] mt-2.5 ml-3.5 text-[#ebe4e4b2]">
                         <h2>Technologies:-</h2>
                     </div>
-                    <motion.div 
+                    <motion.div
                         className="flex gap-3 p-2 mt-1.5 ml-1 max-[911px]:mt-0"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -102,20 +113,20 @@ function Projects() {
                 </motion.div>)
         } catch (error) {
             Cards.push(
-                <motion.div 
+                <motion.div
                     custom={index}
                     initial="hidden"
                     animate="visible"
                     variants={cardVariants}
-                    whileHover={{ scale: 1.08, translateY: -8 }} 
+                    whileHover={{ scale: 1.08, translateY: -8 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     className="card hover:cursor-pointer"
                 >
                     <div className="overflow-hidden rounded-t-lg h-[45%] w-full relative group">
-                        <img 
-                            src={ComingSoon} 
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                            alt="" 
+                        <img
+                            src={ComingSoon}
+                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            alt=""
                         />
                         <div className="absolute inset-0 bg-linear-to-t from-[#0bd9c8]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <span className="text-white font-bold text-lg">Coming Soon</span>
@@ -127,13 +138,13 @@ function Projects() {
 
     return (
         <>
-            <motion.div 
+            <motion.div
                 className="gap-6.5 max-[1050px]:w-[90%] max-[700px]:w-full max-[700px]:h-[70%] flex justify-center h-full flex-wrap w-[60%] text-2xl max-[700px]:text-xl font-medium text-white"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
             >
-                <motion.h1 
+                <motion.h1
                     className="decoration-2 decoration-white justify-center flex items-center w-full h-[5%] mt-3.5 p-5 underline ml-2 text-[#f8f5f9]"
                     initial={{ opacity: 0, y: -20, scale: 0.8 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -142,6 +153,14 @@ function Projects() {
                     Projects
                 </motion.h1>
                 {Cards}
+                <motion.button
+                    className='text-white flex items-center justify-center w-[130px] m-3 projectShow rounded bg-[#1c1c1c]'
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    Show all Projects
+                </motion.button>
             </motion.div>
         </>
     )

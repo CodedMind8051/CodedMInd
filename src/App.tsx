@@ -7,6 +7,7 @@ import { LuFile, LuSend } from 'react-icons/lu'
 import { Typewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
 import AboutMe from './components/AboutMe'
+import Contact from './components/Contact'
 
 function App() {
   const containerVariants = {
@@ -41,93 +42,103 @@ function App() {
 
   return (
     <>
-      <div className='h-16'>
-        <motion.div
-          className='fixed flex h-[20%] w-full items-center z-100 bg-[#050505]  shadow-md p-4 mb-10'
-          variants={slideInVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ delay: 0.2 }}
-        >
-          <Navbar />
-        </motion.div></div>
-      <motion.h1
-        className='flex mt-25 max-[650px]:p-0 p-7 text-[#8603dc] max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[55%] md:text-xl lg:text-2xl w-full justify-center font-medium'
-        variants={itemVariants}
+      <motion.div
+        className='fixed flex  h-[200px] w-full items-center z-100 bg-[#050505]  shadow-md p-4 mb-10'
+        variants={slideInVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3, margin: '-80px 0px -80px 0px' }}
+        viewport={{ once: false, amount: 0.2 }}
         transition={{ delay: 0.2 }}
       >
-        Hi, I'm Coded_Mind__
-        <span className='text-[#0bd9c8] ml-2'>
-          <Typewriter
-            words={[`— a curious mind crafting meaningful digital experiences.`]}
-            loop={false}
-            cursor
-            cursorStyle="|"
-            typeSpeed={80}
-            deleteSpeed={50}
-            delaySpeed={100000}
-          />
-        </span>
-      </motion.h1>
-      <motion.div
-        className='flex gap-7 justify-center items-center mt-10 max-[480px]:mt-6'
-        variants={itemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
-        transition={{ duration: 1.2 }}
-      >
-        <Techstack />
+        <Navbar />
       </motion.div>
-      <motion.div
-        className='flex gap-4 justify-center items-center mt-10'
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.3, margin: '-80px 0px -80px 0px' }}
-        transition={{ staggerChildren: 0.5 }}
-      >
-        <motion.button
-          className='text-white flex items-center justify-center w-[160px] gap-3 rounded bg-[#151515] border-[2px]'
+      <div className="pt-28">
+        <motion.h1
+          className='flex mt-25 max-[650px]:p-0 p-7 text-[#8603dc] max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[55%] md:text-xl lg:text-2xl w-full justify-center font-medium'
           variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3, margin: '-80px 0px -80px 0px' }}
+          transition={{ delay: 0.2 }}
         >
-          <LuFile className='text-white' /> Resume/CV
-        </motion.button>
+          Hi, I'm Coded_Mind__
+          <span className='text-[#0bd9c8] ml-2'>
+            <Typewriter
+              words={[`— a curious mind crafting meaningful digital experiences.`]}
+              loop={false}
+              cursor
+              cursorStyle="|"
+              typeSpeed={80}
+              deleteSpeed={50}
+              delaySpeed={100000}
+            />
+          </span>
+        </motion.h1>
+        <motion.div
+          className='flex gap-7 justify-center items-center mt-10 max-[480px]:mt-6'
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
+          transition={{ duration: 1.2 }}
+        >
+          <Techstack />
+        </motion.div>
+        <motion.div
+          className='flex gap-4 justify-center items-center mt-10'
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3, margin: '-80px 0px -80px 0px' }}
+          transition={{ staggerChildren: 0.5 }}
+        >
+          <motion.button
+            className='text-white flex items-center justify-center w-[160px] gap-3 rounded bg-[#151515] border-[2px]'
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <LuFile className='text-white' /> Resume/CV
+          </motion.button>
 
-        <motion.button
-          className='text-black flex items-center justify-center w-[160px] gap-3 rounded bg-amber-50 border border-[2px]'
+          <motion.button
+            className='text-black flex items-center justify-center w-[160px] gap-3 rounded bg-amber-50 border border-[2px]'
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <LuSend /> Get in touch
+          </motion.button>
+        </motion.div>
+        <motion.div
+          className='flex justify-center m-7'
           variants={itemVariants}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
+          transition={{ duration: 1.2 }}
         >
-          <LuSend /> Get in touch
-        </motion.button>
-      </motion.div>
-      <motion.div
-        className='flex justify-center m-7'
-        variants={itemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
-        transition={{ duration: 1.2 }}
-      >
-        <Projects />
-      </motion.div>
-      <motion.div
-        variants={itemVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
-        transition={{ duration: 1.2 }}
-        className='About  flex  justify-center h-[30%] m-7 text-white border-amber-50'  >
-       <AboutMe/>
-      </motion.div>
+          <Projects />
+        </motion.div>
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
+          transition={{ duration: 1.2 }}
+          className='About  flex  justify-center h-[30%] m-7 text-white'  >
+          <AboutMe />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1.2 }}
+          className='flex border p-2.5 mb-7.5 h-[230px]  contact border-amber-50 justify-center  text-white'  >
+          <Contact />
+        </motion.div>
+      </div>
     </>
   )
 }
