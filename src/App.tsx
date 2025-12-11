@@ -2,10 +2,11 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Techstack from './components/techstack'
 import Projects from './components/Projects'
-import LoadingAnimation from './components/LoadingAnimation'
+// import LoadingAnimation from './components/LoadingAnimation'
 import { LuFile, LuSend } from 'react-icons/lu'
 import { Typewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
+import AboutMe from './components/AboutMe'
 
 function App() {
   const containerVariants = {
@@ -40,23 +41,17 @@ function App() {
 
   return (
     <>
-      {/* Fixed Navbar */}
-
-
-      {/* Spacer so content doesn’t go under navbar */}
-      <div className='h-16'>      <motion.div
-        // className='fixed top-0 left-0 w-full z-50 bg-white shadow-md flex items-center h-16 px-4'
-        className='fixed flex h-[20%] w-full items-center z-100 bg-black  shadow-md p-4 mb-10'
-        variants={slideInVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
-        transition={{ delay: 0.2 }}
-      >
-        <Navbar />
-      </motion.div></div>
-
-      {/* Hero Section */}
+      <div className='h-16'>
+        <motion.div
+          className='fixed flex h-[20%] w-full items-center z-100 bg-[#050505]  shadow-md p-4 mb-10'
+          variants={slideInVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ delay: 0.2 }}
+        >
+          <Navbar />
+        </motion.div></div>
       <motion.h1
         className='flex mt-25 max-[650px]:p-0 p-7 text-[#8603dc] max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[55%] md:text-xl lg:text-2xl w-full justify-center font-medium'
         variants={itemVariants}
@@ -78,8 +73,6 @@ function App() {
           />
         </span>
       </motion.h1>
-
-      {/* Techstack Section */}
       <motion.div
         className='flex gap-7 justify-center items-center mt-10 max-[480px]:mt-6'
         variants={itemVariants}
@@ -90,8 +83,6 @@ function App() {
       >
         <Techstack />
       </motion.div>
-
-      {/* Buttons */}
       <motion.div
         className='flex gap-4 justify-center items-center mt-10'
         variants={containerVariants}
@@ -118,8 +109,6 @@ function App() {
           <LuSend /> Get in touch
         </motion.button>
       </motion.div>
-
-      {/* Projects Section */}
       <motion.div
         className='flex justify-center m-7'
         variants={itemVariants}
@@ -129,6 +118,15 @@ function App() {
         transition={{ duration: 1.2 }}
       >
         <Projects />
+      </motion.div>
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
+        transition={{ duration: 1.2 }}
+        className='About  flex  justify-center h-[30%] m-7 text-white border-amber-50'  >
+       <AboutMe/>
       </motion.div>
     </>
   )
