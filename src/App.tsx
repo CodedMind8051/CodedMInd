@@ -43,7 +43,7 @@ function App() {
   return (
     <>
       <motion.div
-        className='fixed flex  h-[200px] w-full items-center z-100 bg-[#050505]  shadow-md p-4 mb-10'
+        className='fixed flex  h-[200px] max-[750px]:h-[130px] w-full items-center z-100 bg-[#050505]  shadow-md p-4 mb-10'
         variants={slideInVariants}
         initial="hidden"
         whileInView="visible"
@@ -52,7 +52,7 @@ function App() {
       >
         <Navbar />
       </motion.div>
-      <div className="pt-28">
+      <div className="pt-28 max-[750px]:pt-15">
         <motion.h1
           className='flex mt-25 max-[650px]:p-0 p-7 text-[#8603dc] max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[55%] md:text-xl lg:text-2xl w-full justify-center font-medium'
           variants={itemVariants}
@@ -135,7 +135,7 @@ function App() {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 1.2 }}
-          className='flex border p-2.5 mb-7.5 h-[230px]  contact border-amber-50 justify-center  text-white'  >
+          className='flex  p-2.5 mb-7.5 h-[230px] contact justify-center  text-white'  >
           <Contact />
         </motion.div>
       </div>

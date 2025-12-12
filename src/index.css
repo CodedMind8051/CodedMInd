@@ -75,7 +75,7 @@ button:hover {
   border-color: #7304bc;
 }
 
-.projectShow{
+.projectShow {
   font-size: 12px;
 }
 
@@ -175,3 +175,54 @@ textarea:focus {
 html {
   scroll-behavior: smooth;
 }
+
+.Talk {
+  display: flex;
+  border-color: color-mix(in oklab, var(--color-white)10%, transparent);
+  font-weight: 900;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition:
+    width 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+
+}
+
+.Talk:hover {
+  border-color: color-mix(in oklab, var(--color-white)10%, transparent);
+  width: 210px;
+}
+
+.Talk h1::after{
+  content: "Let’s talk";
+}
+
+.Talk h1:hover::after {
+  content: "Let’s talk ";  
+}
+
+.icon {
+  font-size: 20px;
+  opacity: 0;
+  transform: translateX(-5px);  /* tiny slide-in feel */
+  transition: 
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  pointer-events: none; /* so hidden state doesn't interfere */
+}
+
+.Talk:hover .icon {
+  opacity: 1;
+  transform: translateX(0);
+  font-weight: 900;
+  font-size: medium;
+}
+
+.ContactMain{
+  border-color: color-mix(in oklab,var(--color-white)10%,transparent);
+  background-color: #0a0a0a;
+}
+
+

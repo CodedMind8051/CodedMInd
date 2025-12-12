@@ -153,14 +153,16 @@ function Projects() {
                     Projects
                 </motion.h1>
                 {Cards}
-                <motion.button
-                    className='text-white flex items-center justify-center w-[130px] m-3 projectShow rounded bg-[#1c1c1c]'
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                >
-                    Show all Projects
-                </motion.button>
+                <div className="w-full flex justify-center items-center mb-10 mt-6">
+                    <motion.button
+                        className='text-white flex items-center justify-center w-[130px] m-3 projectShow rounded bg-[#1c1c1c]'
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        Show all Projects
+                    </motion.button>
+                </div>
             </motion.div>
         </>
     )
