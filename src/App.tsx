@@ -143,8 +143,8 @@ function App() {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 1.2 }}
-          className='flex flex-col p-2.5 mb-7.5  justify-center  items-center  text-white'  >
-            <p className=''>Think, design, and—made by  <span className='font-bold'>Coded_Mind__  !</span> </p>
+          className='flex flex-col p-2.5 mb-7.5  justify-center  items-center  text-[#818183]'  >
+            <p className='font-semibold'>Think, design, and—made by  <span className='font-bold'>Coded_Mind__  !</span> </p>
             <p>© 2025. All rights reserved.</p>
         </motion.div>
       </div>
