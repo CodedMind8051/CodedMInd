@@ -32,13 +32,13 @@ function AboutMe() {
                 <h3 className="text-sm text-gray-400">About</h3>
                 <h1 className="font-bold text-2xl" >Me</h1>
             </div>
-            <div className='flex  max-[650px]:block max-[650px]:h-[80%]  brder py-2 mt-5.5 '>
+            <div className='flex  max-[750px]:block max-[750px]:h-[80%]  brder py-2 mt-5.5 '>
                 <img className='rounded-xl min-[1000px]:h-[95%]' src={Ramx} alt="" />
                 <div>
-                    <h1 className='px-5 py-2 max-[650px]:p-2 font-bold text-xl'>Md. Shahzade</h1>
-                    <p className='px-5 text-[17px] text-gray-400 max-[650px]:p-2'>I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.</p>
+                    <h1 className='px-5 py-2 max-[750px]:p-2 font-bold text-xl'>Md. Shahzade</h1>
+                    <p className='px-5 text-[17px] text-gray-400 max-[750px]:p-2'>I'm a Full Stack web developer and Open Source Contributor, I love building products to solve real-world problems. I'm specialized in building MVP's.</p>
 
-                    <div className=' m-5 text-[17px] font-bold max-[650px]:m-2'><h1>Skill</h1>
+                    <div className=' m-5 text-[17px] font-bold max-[750px]:m-2'><h1>Skill</h1>
                         <div className='flex gap-3 py-1.5 text-xl'>
 
                             {skills.map((Skill) => {
