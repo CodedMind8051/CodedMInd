@@ -37,7 +37,7 @@ function AboutMe() {
     ];
 
     return (
-        <div className='flex flex-col h-[100%] w-[50%] max-[900px]:w-[90%] '>
+        <div className='flex flex-col h-[100%] w-[50%]  max-[900px]:w-[90%] '>
             <div>
                 <h3 className="text-sm text-gray-400">About</h3>
                 <h1 className="font-bold text-2xl" >Me</h1>
@@ -97,11 +97,11 @@ function AboutMe() {
                         I'm at my best when I'm learning, experimenting, and pushing boundaries. Web development is my foundation, but my curiosity keeps me exploring. When a project needs something beyond traditional web dev, I'm not afraid to dive in, learn what's necessary, and deliver.
                     </p>
                 </div>
-                <div className='flex py-2'>
+                <div className='flex py-2 max-[641px]:block max-[641px]:p-0'>
                     <h1 className='  font-bold text-xl'>Core Expertise:  </h1>
                     <p className='font-semibold text-[#8e8e90] p-1'>Full Stack Web Development , Cloud , System design  </p>
                 </div>
-                <div className='flex py-2'>
+                <div className='flex py-2 max-[641px]:block max-[641px]:p-0'>
                     <h1 className='  font-bold text-xl'>Extended Skills: </h1>
                     <p className='font-semibold text-[#8e8e90] p-1'>Mobile, AI, Databases, UI/UX—as projects demand</p>
                 </div>

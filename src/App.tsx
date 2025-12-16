@@ -2,12 +2,13 @@ import './App.css'
 import Navbar from './components/Navbar'
 import Techstack from './components/techstack'
 import Projects from './components/Projects'
-// import LoadingAnimation from './components/LoadingAnimation'
 import { LuFile, LuSend } from 'react-icons/lu'
 import { Typewriter } from 'react-simple-typewriter'
 import { motion } from 'framer-motion'
 import AboutMe from './components/AboutMe'
 import Contact from './components/Contact'
+import { useState } from 'react'
+import Animal from './components/Animal'
 
 function App() {
   const containerVariants = {
@@ -40,8 +41,12 @@ function App() {
     },
   }
 
+
+  const [Btn, setBtn] = useState<any>(null)
+
   return (
     <>
+
       <motion.div
         className='fixed flex  h-[200px] max-[750px]:h-[130px] w-full items-center z-100 bg-[#050505]  shadow-md p-4 mb-10'
         variants={slideInVariants}
@@ -50,6 +55,8 @@ function App() {
         viewport={{ once: false, amount: 0.2 }}
         transition={{ delay: 0.2 }}
       >
+        <Animal />
+
         <Navbar />
       </motion.div>
       <div className="pt-28 max-[750px]:pt-15">
@@ -102,14 +109,27 @@ function App() {
           </motion.button>
 
           <motion.button
-            className='text-black flex items-center justify-center w-[160px] gap-3 rounded bg-amber-50 border border-[2px]'
+            className='text-black flex items-center justify-center w-[160px] gap-3 rounded bg-white border border-[2px]'
             variants={itemVariants}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => { setBtn(!Btn) }}
           >
             <LuSend /> Get in touch
           </motion.button>
+
         </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
+          transition={{ duration: 1.2 }}
+          className='About  flex  justify-center h-[30%] m-7 text-white'  >
+          <AboutMe />
+        </motion.div>
+
         <motion.div
           className='flex justify-center m-7'
           variants={itemVariants}
@@ -124,28 +144,18 @@ function App() {
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
           transition={{ duration: 1.2 }}
-          className='About  flex  justify-center h-[30%] m-7 text-white'  >
-          <AboutMe />
+          className='flex items-center   p-2.5 mb-7.5 h-[230px] contact justify-center  text-white'  >
+          <Contact Btn={Btn}/>
         </motion.div>
-
         <motion.div
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 1.2 }}
-          className='flex  p-2.5 mb-7.5 h-[230px] contact justify-center  text-white'  >
-          <Contact />
-        </motion.div>
-         <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 1.2 }}
           className='flex flex-col p-2.5 mb-7.5  justify-center  items-center  text-[#818183]'  >
-            <p className='font-semibold'>Think, design, and—made by  <span className='font-bold'>Coded_Mind__  !</span> </p>
-            <p>© 2025. All rights reserved.</p>
+          <p className='font-semibold'>Think, design, and—made by  <span className='font-bold'>Coded_Mind__  !</span> </p>
+          <p>© 2025. All rights reserved.</p>
         </motion.div>
       </div>
     </>

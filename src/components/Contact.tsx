@@ -2,6 +2,7 @@
 import { FiSend } from "react-icons/fi";
 import { SiGmail, SiWhatsapp } from "react-icons/si";
 import { CheckCircle } from "lucide-react"
+import { useRef, useEffect } from "react"
 import {
   Dialog,
   DialogContent,
@@ -18,15 +19,31 @@ import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button"
 import { toast } from "sonner"
 import { Toaster } from "../components/ui/sonner"
-function Contact() {
+function Contact({ Btn }: any) {
+  const btn = useRef<any>(null)
+  const first = useRef<any>(true)
+
+  useEffect(() => {
+    if (first.current) {
+      first.current = false
+      return
+    }
+    else {
+      btn.current?.click()
+    }
+  }, [Btn])
+
+
+
+
   return (
-    <div className="text-white w-[40%] justify-center ContactMain max-[950px]:w-[80%] max-[750px]:w-[100%] border flex flex-col gap-4 items-center  p-6 border-amber-50 rounded-lg">
+    <div className="text-white w-[40%]   justify-center ContactMain max-[950px]:w-[80%] max-[750px]:w-[100%] border flex flex-col gap-4 items-center  p-6 border-amber-50 rounded-lg">
       <p className="font-bold text-xl text-[#828282]">
         Hey, you scrolled this far, let’s talk.
       </p>
       <Dialog>
         <DialogTrigger asChild>
-          <button className=" mt-2.5 Talk h-9 font-bold flex items-center w-44 justify-center bg-[#2f2f2f]">
+          <button ref={btn} className=" mt-2.5 Talk h-9 font-bold flex items-center w-44 justify-center bg-[#2f2f2f]">
             <div className="TalkText flex gap-3 items-center justify-center ml-6.5 ">
               <h1></h1>
               <FiSend className="icon font-bold " />
@@ -44,6 +61,8 @@ function Contact() {
 
           </DialogHeader>
           <div className="">
+            <Label htmlFor="Email" className="text-xl py-1.5 font-bold">Email:</Label>
+            <Input className="font-bold " placeholder="Youremail@example.com" id="Email" />
             <Label htmlFor="Subject" className="text-xl py-1.5 font-bold">Subject:</Label>
             <Input className="font-bold " placeholder="What’s this about?" id="Subject" />
             <Label htmlFor="Msg" className="text-xl py-1.5 font-bold">Message:</Label>
