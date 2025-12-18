@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import AboutMe from './components/AboutMe'
 import Contact from './components/Contact'
 import { useState } from 'react'
-import Animal from './components/Animal'
+// import Animal from './components/Animal'
 
 function App() {
   const containerVariants = {
@@ -48,14 +48,15 @@ function App() {
     <>
 
       <motion.div
-        className='fixed flex  h-[200px] max-[750px]:h-[130px] w-full items-center z-100 bg-[#050505]  shadow-md p-4 mb-10'
+        className='fixed flex top-0   h-[120px] max-[750px]:h-[130px] w-full items-center z-100 bg-[#050505]  shadow-md  mb-10'
         variants={slideInVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
         transition={{ delay: 0.2 }}
+
       >
-        <Animal />
+        {/* <Animal /> */}
 
         <Navbar />
       </motion.div>
@@ -126,6 +127,7 @@ function App() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
           transition={{ duration: 1.2 }}
+          id='About'
           className='About  flex  justify-center h-[30%] m-7 text-white'  >
           <AboutMe />
         </motion.div>
@@ -137,6 +139,7 @@ function App() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
           transition={{ duration: 1.2 }}
+          id='Projects'
         >
           <Projects />
         </motion.div>
@@ -145,8 +148,9 @@ function App() {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 1.2 }}
+          id='Contact'
           className='flex items-center   p-2.5 mb-7.5 h-[230px] contact justify-center  text-white'  >
-          <Contact Btn={Btn}/>
+          <Contact Btn={Btn} />
         </motion.div>
         <motion.div
           variants={itemVariants}

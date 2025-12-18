@@ -1,8 +1,8 @@
-// import { SiGmail, SiWhatsapp } from "react-icons/si"
 import { FiSend } from "react-icons/fi";
 import { SiGmail, SiWhatsapp } from "react-icons/si";
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, XCircle } from "lucide-react"
 import { useRef, useEffect } from "react"
+import emailjs from '@emailjs/browser';
 import {
   Dialog,
   DialogContent,
@@ -33,7 +33,32 @@ function Contact({ Btn }: any) {
     }
   }, [Btn])
 
+  const form = useRef<any>(null);
 
+  function SendEmali(Data: any) {
+    Data.preventDefault();
+    const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID 
+      const TemplateId = import.meta.env.VITE_EMAIL_TEMPLATE_KEY
+       const PubKey = import.meta.env.VITE_EMAIL_PUBKEY
+
+
+
+    emailjs.sendForm(serviceId,TemplateId, form.current, {
+      publicKey: PubKey
+    }).then(
+      () => {
+        toast("Message Sent Successfully", {
+          icon: <CheckCircle className="text-green-500" />,
+
+        })
+      },
+      (error) => {
+        toast("Some error occure.", {
+          icon: <XCircle className="text-red-600" />,
+        })
+      }
+    )
+  }
 
 
   return (
@@ -60,28 +85,25 @@ function Contact({ Btn }: any) {
             </DialogDescription>
 
           </DialogHeader>
-          <div className="">
-            <Label htmlFor="Email" className="text-xl py-1.5 font-bold">Email:</Label>
-            <Input className="font-bold " placeholder="Youremail@example.com" id="Email" />
-            <Label htmlFor="Subject" className="text-xl py-1.5 font-bold">Subject:</Label>
-            <Input className="font-bold " placeholder="What’s this about?" id="Subject" />
-            <Label htmlFor="Msg" className="text-xl py-1.5 font-bold">Message:</Label>
-            <Textarea placeholder="Type your message here." className="h-33 font-bold" id="Msg" />
-          </div>
-          <DialogFooter>
-            <Button onClick={() => {
-              toast("Message Sent Successfully", {
-                icon: <CheckCircle className="text-green-500" />,
-              })
-            }} className="bg-[#e5e5e5] text-black"><SiGmail className="text-[#dc4e42]" /> Email</Button>
-            <Button
-              onClick={() => {
-                toast("Message Sent Successfully", {
-                  icon: <CheckCircle className="text-green-500" />,
-                })
-              }}
-              className="bg-[#e5e5e5] text-black" ><SiWhatsapp className="text-[#25d366]" /> Whatsapp</Button>
-          </DialogFooter>
+          <form ref={form} onSubmit={SendEmali} >
+            <div className="">
+
+              <Label htmlFor="Email" className="text-xl py-1.5 font-bold">Email:</Label>
+              <Input name="SenderEmail" className="font-bold " placeholder="Youremail@example.com" id="Email" />
+              <Label htmlFor="Subject" className="text-xl py-1.5 font-bold">Subject:</Label>
+              <Input name="Subject" className="font-bold " placeholder="What’s this about?" id="Subject" />
+              <Label htmlFor="Msg" className="text-xl py-1.5 font-bold">Message:</Label>
+              <Textarea name="message" placeholder="Type your message here." className="h-33 font-bold" id="Msg" />
+
+            </div>
+            <DialogFooter>
+              <Button type="submit" onSubmit={SendEmali} className="bg-[#e5e5e5] text-black"><SiGmail className="text-[#dc4e42]" /> Email</Button>
+              <Button
+                type="submit" onSubmit={SendEmali}
+                className="bg-[#e5e5e5] text-black" ><SiWhatsapp className="text-[#25d366]" /> Whatsapp</Button>
+
+            </DialogFooter>
+          </form>
         </DialogContent>
       </Dialog>
       <div className="font-semibold  text-sm flex flex-col relative bottom-0 top-10 items-center mb-3 " >
