@@ -52,7 +52,7 @@ function Contact({ Btn }: any) {
 
         })
       },
-      (error) => {
+      () => {
         toast("Some error occure.", {
           icon: <XCircle className="text-red-600" />,
         })
