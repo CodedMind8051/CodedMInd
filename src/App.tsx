@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import AboutMe from './components/AboutMe'
 import Contact from './components/Contact'
 import { useState } from 'react'
-// import Animal from './components/Animal'
+
 
 function App() {
   const containerVariants = {
@@ -56,7 +56,7 @@ function App() {
         transition={{ delay: 0.2 }}
 
       >
-        {/* <Animal /> */}
+        
 
         <Navbar />
       </motion.div>
