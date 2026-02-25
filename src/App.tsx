@@ -58,7 +58,7 @@ function App() {
       </motion.div>
       <div className="pt-28 max-[750px]:pt-15">
         <motion.h1
-          className='hero-title flex mt-25 max-[650px]:mt-20 max-[650px]:p-2 p-7 text-[#8603dc] max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[12px] md:text-xl lg:text-2xl w-full justify-center text-center font-medium'
+          className='hero-title flex mt-25 max-[650px]:p-0 p-7 text-[#8603dc] max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[55%] md:text-xl lg:text-2xl w-full justify-center font-medium'
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
