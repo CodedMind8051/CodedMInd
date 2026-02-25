@@ -2,13 +2,13 @@ import Logo from '../assets/Logo-Photoroom.png'
 
 function Navbar() {
     return (
-        <nav className="w-full flex items-center justify-between h-[50%]">
-            <img className='w-[60px] sm:w-[80px] md:w-[80px] xl:w-[160px] lg:w-[150px] m-[10%] mb-[8%] rounded-[100%]' src={Logo} alt="" />
-            <div className="navlinks flex gap-[3%] max-[500px]:gap-[5%] mt-[2%] font-medium text-xs sm:text-xl lg:text-2xl items-center justify-center w-[50%]">
-                <a className="text-white hover:underline hover:decoration-2 decoration-white" href="#">Home</a>
-                <a className="text-white hover:underline hover:decoration-2 decoration-white" href="#Projects">Projects</a>
-                <a className="text-white hover:underline hover:decoration-2 decoration-white" href="#About">About</a>
-                <a className="text-white hover:underline hover:decoration-2 decoration-white" href="#Contact">Contact</a>
+        <nav className="mx-auto flex h-[56%] w-full max-w-[1300px] items-center justify-between px-3 sm:px-6">
+            <img className='w-[58px] rounded-full ring-1 ring-white/10 transition-transform duration-300 hover:scale-105 sm:w-[72px] xl:w-[108px]' src={Logo} alt="Coded Mind logo" />
+            <div className="navlinks flex w-[62%] items-center justify-center gap-[4%] text-xs font-medium sm:text-lg lg:text-xl">
+                <a className="text-white/90 transition-colors duration-300 hover:text-white" href="#">Home</a>
+                <a className="text-white/90 transition-colors duration-300 hover:text-white" href="#Projects">Projects</a>
+                <a className="text-white/90 transition-colors duration-300 hover:text-white" href="#About">About</a>
+                <a className="text-white/90 transition-colors duration-300 hover:text-white" href="#Contact">Contact</a>
             </div>
         </nav>
     )

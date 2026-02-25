@@ -9,68 +9,64 @@ import AboutMe from './components/AboutMe'
 import Contact from './components/Contact'
 import { useState } from 'react'
 
-
 function App() {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.5,
-        delayChildren: 0.5,
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    hidden: { opacity: 0, scale: 0.97, y: 16 },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 1.2 },
+      transition: { duration: 0.9 },
     },
   }
 
   const slideInVariants = {
-    hidden: { opacity: 0, x: -15 },
+    hidden: { opacity: 0, y: -16 },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 1.4 },
+      y: 0,
+      transition: { duration: 0.8 },
     },
   }
 
-
-  const [Btn, setBtn] = useState<any>(null)
+  const [Btn, setBtn] = useState(false)
 
   return (
     <>
+      <div className="bg-orb bg-orb-primary" />
+      <div className="bg-orb bg-orb-secondary" />
 
       <motion.div
-        className='fixed flex top-0   h-[120px] max-[750px]:h-[130px] w-full items-center z-100 bg-[#050505]  shadow-md  mb-10'
+        className='fixed top-0 z-100 flex h-[110px] w-full items-center border-b border-white/8 bg-black/65 shadow-xl backdrop-blur-xl max-[750px]:h-[120px]'
         variants={slideInVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
-        transition={{ delay: 0.2 }}
-
       >
-        
-
         <Navbar />
       </motion.div>
-      <div className="pt-28 max-[750px]:pt-15">
+
+      <div className="mx-auto max-w-[1350px] px-4 pb-8 pt-32 max-[750px]:pt-24">
         <motion.h1
-          className='flex mt-25 max-[650px]:p-0 p-7 text-[#8603dc] max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[55%] md:text-xl lg:text-2xl w-full justify-center font-medium'
+          className='hero-title flex w-full justify-center px-7 text-center text-[#a936f8] max-[650px]:px-0 max-[650px]:text-[15px] max-[560px]:text-[13px] max-[470px]:text-[55%] md:text-xl lg:text-2xl'
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3, margin: '-80px 0px -80px 0px' }}
-          transition={{ delay: 0.2 }}
         >
-          Hi, I'm Coded_Mind__
-          <span className='text-[#0bd9c8] ml-2'>
+          Hi, I&apos;m Coded_Mind__
+          <span className='ml-2 text-[#0bd9c8]'>
             <Typewriter
               words={[`— a curious mind crafting meaningful digital experiences.`]}
               loop={false}
@@ -82,43 +78,42 @@ function App() {
             />
           </span>
         </motion.h1>
+
         <motion.div
-          className='flex gap-7 justify-center items-center mt-10 max-[480px]:mt-6'
+          className='mt-10 flex items-center justify-center gap-7 max-[480px]:mt-6'
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
-          transition={{ duration: 1.2 }}
         >
           <Techstack />
         </motion.div>
+
         <motion.div
-          className='flex gap-4 justify-center items-center mt-10'
+          className='mt-10 flex items-center justify-center gap-4'
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.3, margin: '-80px 0px -80px 0px' }}
-          transition={{ staggerChildren: 0.5 }}
         >
           <motion.button
-            className='text-white flex items-center justify-center w-[160px] gap-3 rounded bg-[#151515] border-[2px]'
+            className='smooth-cta smooth-cta--dark'
             variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.96 }}
           >
-            <LuFile className='text-white' /> Resume/CV
+            <LuFile /> Resume/CV
           </motion.button>
 
           <motion.button
-            className='text-black flex items-center justify-center w-[160px] gap-3 rounded bg-white border border-[2px]'
+            className='smooth-cta smooth-cta--light'
             variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.96 }}
             onClick={() => { setBtn(!Btn) }}
           >
             <LuSend /> Get in touch
           </motion.button>
-
         </motion.div>
 
         <motion.div
@@ -126,39 +121,42 @@ function App() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
-          transition={{ duration: 1.2 }}
           id='About'
-          className='About  flex  justify-center h-[30%] m-7 text-white'  >
+          className='About mt-5 flex justify-center m-7 text-white'
+        >
           <AboutMe />
         </motion.div>
 
         <motion.div
-          className='flex justify-center m-7'
+          className='m-7 flex justify-center'
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.25, margin: '-80px 0px -80px 0px' }}
-          transition={{ duration: 1.2 }}
           id='Projects'
         >
           <Projects />
         </motion.div>
+
         <motion.div
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 1.2 }}
           id='Contact'
-          className='flex items-center   p-2.5 mb-7.5 h-[230px] contact justify-center  text-white'  >
+          className='contact mb-7.5 flex h-[230px] items-center justify-center p-2.5 text-white'
+        >
           <Contact Btn={Btn} />
         </motion.div>
+
         <motion.div
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 1.2 }}
-          className='flex flex-col p-2.5 mb-7.5  justify-center  items-center  text-[#818183]'  >
-          <p className='font-semibold'>Think, design, and—made by  <span className='font-bold'>Coded_Mind__  !</span> </p>
+          className='mb-7.5 flex flex-col items-center justify-center p-2.5 text-[#818183]'
+        >
+          <p className='font-semibold'>Think, design, and—made by <span className='font-bold'>Coded_Mind__!</span></p>
           <p>© 2025. All rights reserved.</p>
         </motion.div>
       </div>
