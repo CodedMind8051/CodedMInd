@@ -10,8 +10,8 @@ import {
 } from "../components/ui/tooltip";
 import { FaGlobe, FaGithub, FaArrowLeft, FaFilter } from "react-icons/fa";
 import {
-    SiExpress, SiNodedotjs, SiPython, SiReact,
-    SiTailwindcss, SiMongodb, SiPostgresql, SiDocker, SiFirebase
+    SiExpress, SiNodedotjs, SiReact,
+    SiTailwindcss, SiMongodb
 } from "react-icons/si";
 
 const allProjectsData = [

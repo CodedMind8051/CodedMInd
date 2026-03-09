@@ -1,6 +1,6 @@
 import { motion, type Variants } from 'framer-motion'
 import Me from '../assets/Me.png'
-import { SiReact, SiGithub, SiTailwindcss, SiFigma, SiPostman, SiVercel, SiDocker, SiDjango, SiFastapi, SiYoutube, SiInstagram, SiX, SiLinkedin, SiAmazonwebservices, SiNodedotjs, SiPython, SiExpress, SiPostgresql, SiMongodb, SiShadcnui } from 'react-icons/si'
+import { SiReact, SiGithub, SiTailwindcss, SiFigma, SiPostman, SiVercel, SiDocker, SiDjango, SiFastapi, SiYoutube, SiInstagram, SiX, SiAmazonwebservices, SiNodedotjs, SiPython, SiExpress, SiPostgresql, SiMongodb, SiShadcnui } from 'react-icons/si'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip"
 
 // Professional entrance animation

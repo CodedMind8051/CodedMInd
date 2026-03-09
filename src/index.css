@@ -117,22 +117,13 @@ button:focus-visible {
 }
 
 /* Premium scrollbar styling */
-::-webkit-scrollbar {
-  width: 12px;
-}
 
 ::-webkit-scrollbar-track {
   background: #0e0d0d;
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #8603dc, #0bd9c8);
-  border-radius: 6px;
-}
 
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #0bd9c8, #8603dc);
-}
+
 
 /* Selection styling */
 ::selection {

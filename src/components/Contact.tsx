@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiSend, FiMail } from "react-icons/fi";
 import { SiWhatsapp } from "react-icons/si";
-import { CheckCircle, XCircle, Loader2 } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
 // @ts-ignore
 import emailjs from '@emailjs/browser';
