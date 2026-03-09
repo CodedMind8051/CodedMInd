@@ -1,113 +1,172 @@
+import { motion, type Variants } from 'framer-motion'
 import Me from '../assets/Me.png'
 import { SiReact, SiGithub, SiTailwindcss, SiFigma, SiPostman, SiVercel, SiDocker, SiDjango, SiFastapi, SiYoutube, SiInstagram, SiX, SiLinkedin, SiAmazonwebservices, SiNodedotjs, SiPython, SiExpress, SiPostgresql, SiMongodb, SiShadcnui } from 'react-icons/si'
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipTrigger,
-} from "../components/ui/tooltip"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip"
 
+// Professional entrance animation
+const sectionVar: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: { 
+            duration: 0.8, 
+            ease: [0.16, 1, 0.3, 1], // Custom cubic-bezier for a "premium" feel
+            staggerChildren: 0.05 
+        }
+    }
+}
 
+const itemVar = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 }
+}
 
 function AboutMe() {
-
     const skills = [
-        { icon: <SiReact className="  text-[#08dcff] cursor-pointer" />, label: "React.js" },
-        { icon: <SiTailwindcss className="  text-[#1dc0cd] cursor-pointer " />, label: "Tailwind CSS" },
-        { icon: <SiNodedotjs className='text-[#85c00a] cursor-pointer' />, label: "Node.js" },
-        { icon: <SiPython className='text-[#f7ce43] cursor-pointer  ' />, label: "Python" },
-        { icon: <SiExpress className='text-[#fcfaf5]  cursor-pointer  ' />, label: "Express.js" },
-        { icon: <SiPostgresql className='text-[#399cdc]  cursor-pointer  ' />, label: "Sql" },
-        { icon: <SiMongodb className='text-[#08ee69]  cursor-pointer  ' />, label: "Mongo DB" },
-        { icon: <SiAmazonwebservices className='text-[#ff9900]  cursor-pointer  ' />, label: "AWS" },
-        { icon: <SiDocker className='text-[#2496ed]  cursor-pointer  ' />, label: "Docker" },
-        { icon: <SiFastapi className='text-[#009688]  cursor-pointer  ' />, label: "Fast Api" },
-        { icon: <SiDjango className='text-[#096e48]  cursor-pointer  ' />, label: "Django" },
-        { icon: <SiFigma className='text-[#f25425]  cursor-pointer  ' />, label: "Figma" },
-        { icon: <SiVercel className='text-white  cursor-pointer  ' />, label: "Vercel" },
-        { icon: <SiPostman className='text-[#ff713d]  cursor-pointer  ' />, label: "Postman" },
-        { icon: <SiShadcnui className='text-white  cursor-pointer  ' />, label: "Shadcnui" },
+        { icon: <SiReact className="text-[#08dcff]" />, label: "React.js" },
+        { icon: <SiTailwindcss className="text-[#1dc0cd]" />, label: "Tailwind CSS" },
+        { icon: <SiNodedotjs className='text-[#85c00a]' />, label: "Node.js" },
+        { icon: <SiPython className='text-[#f7ce43]' />, label: "Python" },
+        { icon: <SiExpress className='text-white' />, label: "Express.js" },
+        { icon: <SiPostgresql className='text-[#399cdc]' />, label: "Sql" },
+        { icon: <SiMongodb className='text-[#08ee69]' />, label: "Mongo DB" },
+        { icon: <SiAmazonwebservices className='text-[#ff9900]' />, label: "AWS" },
+        { icon: <SiDocker className='text-[#2496ed]' />, label: "Docker" },
+        { icon: <SiFastapi className='text-[#009688]' />, label: "Fast Api" },
+        { icon: <SiDjango className='text-[#096e48]' />, label: "Django" },
+        { icon: <SiFigma className='text-[#f25425]' />, label: "Figma" },
+        { icon: <SiVercel className='text-white' />, label: "Vercel" },
+        { icon: <SiPostman className='text-[#ff713d]' />, label: "Postman" },
+        { icon: <SiShadcnui className='text-white' />, label: "Shadcnui" },
     ];
 
-    const Socials = [
-        { icon: <SiGithub className="  text-[#f7fafa] cursor-pointer" />, label: "Github" },
-        { icon: <SiYoutube className="  text-[#f61f1f] cursor-pointer " />, label: "Youtube" },
-        { icon: <SiInstagram className="  text-[#df3477] cursor-pointer " />, label: "Instagram" },
-        { icon: <SiX className="  text-[#fcf8fa] cursor-pointer " />, label: "X" },
-        { icon: <SiLinkedin className="  text-[#2f6cb4] cursor-pointer " />, label: "Linkedin" },
+    const socials = [
+        { icon: <SiGithub className="text-white" />, label: "Github" ,link:"https://github.com/CodedMind8051"},
+        { icon: <SiYoutube className="text-[#f61f1f]" />, label: "Youtube",link:"https://youtube.com/@coded_mind?si=9fB1Ct6mElRjrW-x" },
+        { icon: <SiInstagram className="text-[#df3477]" />, label: "Instagram",link:"https://www.instagram.com/coded_mind__?igsh=azQ2ZnQ3cHB6aXBm" },
+        { icon: <SiX className="text-white" />, label: "X",link:"https://x.com/coded_mind__?t=_eqs2HM2Huw_Vf2PPQMPsg&s=09" },
+        // { icon: <SiLinkedin className="text-[#2f6cb4]" />, label: "Linkedin",link:"" },
     ];
 
     return (
-        <div className='flex flex-col h-[100%] w-[50%]  max-[900px]:w-[90%] '>
-            <div>
-                <h3 className="text-sm text-gray-400">About</h3>
-                <h1 className="font-bold text-2xl" >Me</h1>
-            </div>
-            <div className='flex  max-[750px]:block max-[750px]:h-[80%]  brder py-2 mt-5.5 '>
-                <img className='rounded-xl min-[1000px]:h-[95%]' src={Me} alt="" />
-                <div>
-                    <h1 className='px-5 py-2 max-[750px]:p-2 font-bold text-xl'>Md. Shahzade</h1>
-                    <p className='px-5 text-[17px] text-gray-400 max-[750px]:p-2'>I'm a full-stack web developer who specializes in building robust, scalable web applications. That's where my expertise lies—crafting clean code, architecting solid systems, and creating seamless user experiences on the web.</p>
+        <TooltipProvider delayDuration={100}>
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.1 }}
+                variants={sectionVar}
+                className='flex flex-col w-full max-w-5xl mx-auto px-6 py-16'
+            >
+                {/* Header */}
+                <motion.div variants={itemVar} className='mb-10'>
+                    <h3 className="text-sm font-bold tracking-[0.2em] text-[#0bd9c8] uppercase">About</h3>
+                    <h1 className="font-bold text-4xl md:text-5xl text-white tracking-tight">Me</h1>
+                </motion.div>
 
-                    <div className=' m-5 text-[17px] font-bold max-[750px]:m-2'><h1>Skill</h1>
-                        <div className='flex gap-3 py-1.5 text-xl'>
+                {/* Profile Section */}
+                <div className='flex flex-col lg:flex-row gap-12 mb-20'>
+                    <motion.div variants={itemVar} className='w-full lg:w-1/2'>
+                        <motion.img
+                            whileHover={{ scale: 1.02, rotate: 1 }}
+                            className='rounded-2xl w-full h-auto object-cover border border-white/10 shadow-2xl'
+                            src={Me}
+                            alt="Md. Shahzade"
+                        />
+                    </motion.div>
 
-                            {skills.map((Skill) => {
+                    <motion.div variants={itemVar} className='lg:w-1/2 flex flex-col justify-center'>
+                        <h1 className='font-bold text-3xl text-white mb-4'>Md. Shahzade</h1>
+                        <p className='text-lg text-gray-400 leading-relaxed mb-8'>
+                            I'm a <span className="text-white font-medium">full-stack web developer</span> who specializes in building robust, scalable web applications. I focus on crafting clean code, architecting solid systems, and creating seamless user experiences.
+                        </p>
 
-                                return (
-                                    <Tooltip key={Skill.label}>
-                                        <TooltipTrigger asChild>{Skill.icon}</TooltipTrigger>
-                                        <TooltipContent>
-                                            <p>{Skill.label}</p>
-                                        </TooltipContent>
-                                    </Tooltip>
-                                )
-                            })}
-                        </div>
-                        <div className=' py-2.5'>
-                            <h1>My Social Universe</h1>
-                            <div className='flex py-2 gap-3.5 text-xl'>
-                                {Socials.map((Socials) => {
-                                    return (
-                                        <Tooltip key={Socials.label}>
-                                            <TooltipTrigger asChild>{Socials.icon}</TooltipTrigger>
-                                            <TooltipContent>
-                                                <p>{Socials.label}</p>
+                        <div className='space-y-8'>
+                            <div>
+                                <h1 className='text-xs font-black uppercase tracking-widest text-gray-500 mb-4'>Technical Stack</h1>
+                                <div className='flex flex-wrap gap-5 text-2xl'>
+                                    {skills.map((skill, i) => (
+                                        <Tooltip key={i}>
+                                            <TooltipTrigger asChild>
+                                                <motion.div 
+                                                    whileHover={{ y: -5, scale: 1.2 }}
+                                                    className="cursor-pointer"
+                                                >
+                                                    {skill.icon}
+                                                </motion.div>
+                                            </TooltipTrigger>
+                                            <TooltipContent className="bg-white border-zinc-800 text-black">
+                                                <p>{skill.label}</p>
                                             </TooltipContent>
                                         </Tooltip>
-                                    )
-                                })}
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div>
+                                <h1 className='text-xs font-black uppercase tracking-widest text-gray-500 mb-4'>My Social Universe</h1>
+                                <div className='flex flex-wrap gap-6 text-2xl'>
+                                    {socials.map((social, i) => (
+                                        <Tooltip key={i}>
+                                            <TooltipTrigger asChild>
+                                                <motion.div 
+                                                    whileHover={{ y: -5, scale: 1.2 }}
+                                                    className="cursor-pointer"
+                                                >
+                                                    <a href={social.link} target="_blank" rel="noopener noreferrer">
+                                                        {social.icon}
+                                                    </a>
+                                                </motion.div>
+                                            </TooltipTrigger>
+                                            <TooltipContent className="bg-white border-zinc-800 text-balck">
+                                                <p>{social.label}</p>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div className=''>
-                <div className='py-2'>
-                    <h1 className='font-bold text-xl'>Beyond Web Development:</h1>
-                    <p className='font-semibold text-[#8e8e90]'>While web development is my core strength, I'm comfortable working across different domains when projects require it. I've worked with mobile apps, AI integrations, databases, cloud infrastructure, and UI/UX design—not as a jack-of-all-trades, but as someone who understands how these pieces connect to build complete solutions.</p>
-                </div>
-                <div className='py-2'>
-                    <h1 className='font-bold text-xl'>What Drives Me:</h1>
-                    <p className='font-semibold text-[#8e8e90]'>I'm genuinely curious and experimental by nature. I love diving deep into technologies, understanding how they work, and exploring their possibilities. My interest in physics and mathematics shapes how I approach problem-solving—with analytical thinking and a desire to understand the fundamentals.</p>
-                </div>
-                <div className='py-2'>
-                    <h1 className='font-bold text-xl'>My Philosophy:</h1>
-                    <p className='font-semibold text-[#8e8e90]'>
-                        <span className='underline text-white '>Stay curious, stay driven.  </span>
-                        I'm at my best when I'm learning, experimenting, and pushing boundaries. Web development is my foundation, but my curiosity keeps me exploring. When a project needs something beyond traditional web dev, I'm not afraid to dive in, learn what's necessary, and deliver.
-                    </p>
-                </div>
-                <div className='flex py-2 max-[641px]:block max-[641px]:p-0'>
-                    <h1 className='  font-bold text-xl'>Core Expertise:  </h1>
-                    <p className='font-semibold text-[#8e8e90] p-1'>Full Stack Web Development , Cloud , System design  </p>
-                </div>
-                <div className='flex py-2 max-[641px]:block max-[641px]:p-0'>
-                    <h1 className='  font-bold text-xl'>Extended Skills: </h1>
-                    <p className='font-semibold text-[#8e8e90] p-1'>Mobile, AI, Databases, UI/UX—as projects demand</p>
+                    </motion.div>
                 </div>
 
-            </div>
-        </div>
+                {/* Details Section */}
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10'>
+                    <motion.div variants={itemVar} className="space-y-3">
+                        <h1 className='font-bold text-xl text-white border-l-4 border-[#8603dc] pl-4'>Beyond the Web</h1>
+                        <p className='font-medium text-gray-500 leading-relaxed text-[15px]'>
+                            I'm comfortable working across mobile apps, AI integrations, and cloud infrastructure. I understand how these pieces connect to build complete, modern solutions.
+                        </p>
+                    </motion.div>
+
+                    <motion.div variants={itemVar} className="space-y-3">
+                        <h1 className='font-bold text-xl text-white border-l-4 border-[#0bd9c8] pl-4'>The Drive</h1>
+                        <p className='font-medium text-gray-500 leading-relaxed text-[15px]'>
+                            My interest in physics and mathematics shapes my problem-solving—analytical thinking combined with a desire to understand the fundamental mechanics of every project.
+                        </p>
+                    </motion.div>
+
+                    <motion.div variants={itemVar} className='md:col-span-2 space-y-3 bg-white/5 p-6 rounded-2xl border border-white/5'>
+                        <h1 className='font-bold text-xl text-white'>Philosophy</h1>
+                        <p className='font-medium text-gray-400 leading-relaxed'>
+                            <span className='text-white underline decoration-[#8603dc] underline-offset-8 decoration-2'>Stay curious, stay driven.</span>
+                            {" "} I'm at my best when learning and pushing boundaries. When a project needs something beyond traditional development, I dive in to deliver exactly what's necessary.
+                        </p>
+                    </motion.div>
+                </div>
+
+                {/* Expertise Footer */}
+                <motion.div variants={itemVar} className='mt-16 pt-10 border-t border-white/5 grid grid-cols-1 sm:grid-cols-2 gap-6'>
+                    <div className='flex flex-col gap-1'>
+                        <h1 className='font-bold text-sm uppercase text-gray-500 tracking-tighter'>Core Expertise</h1>
+                        <p className='font-semibold text-white'>Full Stack Web, Cloud, System Design</p>
+                    </div>
+                    <div className='flex flex-col gap-1'>
+                        <h1 className='font-bold text-sm uppercase text-gray-500 tracking-tighter'>Extended Skills</h1>
+                        <p className='font-semibold text-white'>Mobile, AI, UI/UX, Databases</p>
+                    </div>
+                </motion.div>
+            </motion.div>
+        </TooltipProvider>
     )
 }
 
