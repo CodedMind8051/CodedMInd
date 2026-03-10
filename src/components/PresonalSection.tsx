@@ -9,7 +9,7 @@ const FAVORITES = {
         { title: "Attack on Titan", year: "2013", genre: "Anime", rating: "9.1", link: "https://www.imdb.com/title/tt2560140/" },
         { title: "Death Note", year: "2006", genre: "Anime", rating: "8.9", link: "https://www.imdb.com/title/tt0877057/" },
         { title: "The Social Network", year: "2010", genre: "Biography", rating: "7.8", link: "https://www.imdb.com/title/tt1285016/" },
-        { title: "Vinland Saga", year: "2019", genre: "Anime", rating: "8.8", link: "https://www.imdb.com/title/tt10213332/" },
+        { title: "Vinland Saga", year: "2019", genre: "Anime", rating: "8.8", link: "https://www.imdb.com/title/tt10233448/" },
         { title: "Code Geass", year: "2006", genre: "Anime", rating: "8.7", link: "https://www.imdb.com/title/tt0994314/" },
         { title: "Dark", year: "2017", genre: "Sci-Fi Thriller", rating: "8.7", link: "https://www.imdb.com/title/tt5753856/" },
         { title: "Breaking Bad", year: "2008", genre: "Crime Drama", rating: "9.5", link: "https://www.imdb.com/title/tt0903747/" },

@@ -4,20 +4,20 @@ function Navbar() {
   return (
     <nav className="w-full max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 h-full">
       {/* Brand/Logo Area */}
-      <div className="flex items-center group cursor-pointer">
-        <div className="relative">
-          {/* Subtle glow effect behind logo */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-[#8603dc] to-[#0bd9c8] rounded-full blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-          <img 
-            className='relative w-12 sm:w-16 lg:w-20 aspect-square object-cover rounded-full border border-white/10' 
-            src={Logo} 
-            alt="Coded_Mind Logo" 
-          />
-        </div>
-        <span className="hidden sm:block ml-4 font-bold text-white tracking-widest text-sm lg:text-base">
-          CODED_MIND
-        </span>
-      </div>
+   <div className="flex items-center group cursor-pointer">
+  <div className="relative">
+    <div className="relative bg-[#050505] border border-2 border-amber-50/5 p-2 rounded-lg  backdrop-blur-sm  transition-all duration-300">
+      <img 
+        className="w-10 sm:w-12 lg:w-14 aspect-square object-cover rounded" 
+        src={Logo} 
+        alt="Coded Mind Logo" 
+      />
+    </div>
+  </div>
+  <span className="hidden sm:block ml-4 font-semibold text-white tracking-wide text-sm lg:text-base">
+    CODED_MIND__
+  </span>
+</div>
 
       {/* Nav Links */}
       <div className="flex items-center gap-6 md:gap-10 font-medium">

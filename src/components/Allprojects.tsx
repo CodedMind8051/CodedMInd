@@ -32,7 +32,6 @@ const allProjectsData = [
         isComingSoon: false,
         category: "Productivity"
     },
-  
     { id: 2, isComingSoon: true },
 ];
 
@@ -53,39 +52,40 @@ export default function AllProjects() {
         animate: {
             opacity: 1,
             y: 0,
-            transition: { type: "spring", stiffness: 100, damping: 15 }
+            transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
         },
         exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } }
     } as const;
 
     return (
-        <div className="min-h-screen bg-[#050506] text-white selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
-            {/* Background Orbs */}
+        <div className="min-h-screen bg-neutral-950 text-white selection:bg-neutral-700 selection:text-neutral-100 overflow-x-hidden">
+            {/* Subtle Background Gradient */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-5%] left-[-5%] w-[50%] h-[50%] bg-cyan-500/5 rounded-full blur-[100px] md:blur-[120px]" />
-                <div className="absolute bottom-[-5%] right-[-5%] w-[50%] h-[50%] bg-purple-500/5 rounded-full blur-[100px] md:blur-[120px]" />
+                <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-950" />
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-800/5 via-transparent to-transparent" />
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 md:py-20">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20">
                 {/* Navbar Area */}
-                <div className="flex flex-col gap-6 mb-12 md:mb-16">
+                <div className="flex flex-col gap-5 sm:gap-6 mb-10 sm:mb-12 md:mb-16">
                     <div className="flex items-center justify-between">
                         <Link to="/">
                             <motion.div
                                 whileHover={{ x: -5 }}
-                                className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors cursor-pointer group"
+                                transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                                className="flex items-center gap-2 sm:gap-3 text-neutral-400 hover:text-neutral-100 transition-colors cursor-pointer group"
                             >
-                                <div className="p-2 rounded-full bg-zinc-900 border border-white/5 group-hover:border-cyan-500/50">
+                                <div className="p-1.5 sm:p-2 rounded-full bg-neutral-900/50 border border-neutral-800/50 group-hover:border-neutral-700/50 transition-all">
                                     <FaArrowLeft size={12} />
                                 </div>
-                                <span className="text-sm font-medium">Home</span>
+                                <span className="text-xs sm:text-sm font-medium">Home</span>
                             </motion.div>
                         </Link>
                     </div>
 
-                    {/* Filter Bar - Optimized for Mobile */}
+                    {/* Filter Bar - Premium Mobile Optimized */}
                     <div className="flex items-center gap-3 w-full">
-                        <div className="p-2.5 rounded-xl bg-zinc-900/50 border border-white/5 text-zinc-500 shrink-0">
+                        <div className="p-2 sm:p-2.5 rounded-xl bg-neutral-900/50 border border-neutral-800/50 text-neutral-500 shrink-0">
                             <FaFilter size={14} />
                         </div>
                         <div className="flex gap-2 overflow-x-auto no-scrollbar pb-1 mask-fade-right">
@@ -93,10 +93,11 @@ export default function AllProjects() {
                                 <button
                                     key={cat}
                                     onClick={() => setFilter(cat)}
-                                    className={`px-4 py-2 rounded-xl text-xs md:text-sm font-medium transition-all whitespace-nowrap border ${filter === cat
-                                            ? "bg-cyan-500/10 border-cyan-500/50 text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]"
-                                            : "bg-zinc-900/30 border-white/5 text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900/60"
-                                        }`}
+                                    className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap border ${
+                                        filter === cat
+                                            ? "bg-neutral-800/50 border-neutral-700/50 text-neutral-100 shadow-lg"
+                                            : "bg-neutral-900/30 border-neutral-800/30 text-neutral-500 hover:text-neutral-300 hover:bg-neutral-900/60 hover:border-neutral-800/50"
+                                    }`}
                                 >
                                     {cat}
                                 </button>
@@ -109,12 +110,13 @@ export default function AllProjects() {
                 <motion.header
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-12 md:mb-20"
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                    className="mb-10 sm:mb-12 md:mb-20"
                 >
-                    <h1 className="text-4xl md:text-7xl font-black mb-4 tracking-tighter uppercase italic">
-                        The <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Archive</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold mb-3 sm:mb-4 tracking-tight">
+                        The Archive
                     </h1>
-                    <p className="text-zinc-400 text-sm md:text-lg max-w-xl font-light leading-relaxed">
+                    <p className="text-neutral-400 text-sm sm:text-base md:text-lg max-w-xl font-light leading-relaxed">
                         A curated collection of digital experiences and system architectures.
                     </p>
                 </motion.header>
@@ -125,7 +127,7 @@ export default function AllProjects() {
                     variants={containerVariants}
                     initial="initial"
                     animate="animate"
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 lg:gap-10"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8"
                 >
                     <AnimatePresence mode='popLayout'>
                         {filteredProjects.map((project) => (
@@ -134,73 +136,89 @@ export default function AllProjects() {
                                 key={project.id}
                                 variants={cardVariants}
                                 whileHover={{ y: -8 }}
-                                className="group relative bg-[#0d0d0f] border border-white/[0.05] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden flex flex-col h-full hover:border-cyan-500/30 transition-all duration-500"
+                                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                                className="group relative bg-neutral-900/40 backdrop-blur-sm border border-neutral-800/50 rounded-xl sm:rounded-2xl overflow-hidden flex flex-col h-full hover:border-neutral-700/50 transition-all duration-500 shadow-lg"
                             >
                                 {project.isComingSoon ? (
-                                    <div className="relative h-[300px] md:h-[400px] flex flex-col items-center justify-center p-6 text-center">
-                                        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/[0.02] to-transparent" />
+                                    <div className="relative h-[280px] sm:h-[300px] md:h-[400px] flex flex-col items-center justify-center p-6 sm:p-8 text-center">
+                                        <div className="absolute inset-0 bg-gradient-to-b from-neutral-800/10 to-transparent" />
                                         <div className="relative mb-6">
-                                            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 animate-pulse flex items-center justify-center border border-cyan-500/20">
-                                                <div className="w-4 h-4 rounded-full bg-cyan-500 animate-ping" />
+                                            <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-xl bg-neutral-800/30 flex items-center justify-center border border-neutral-700/30">
+                                                <div className="relative flex h-3 w-3 sm:h-4 sm:w-4">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neutral-400 opacity-40"></span>
+                                                    <span className="relative inline-flex rounded-full h-3 w-3 sm:h-4 sm:w-4 bg-neutral-500"></span>
+                                                </div>
                                             </div>
                                         </div>
-                                        <h3 className="text-xs font-bold tracking-[0.3em] uppercase mb-2 text-white">In Development</h3>
-                                        <p className="text-zinc-500 text-[10px] md:text-xs italic">Crafting something interesting.</p>
+                                        <h3 className="text-xs sm:text-sm font-medium tracking-[0.25em] uppercase mb-2 text-neutral-300">In Development</h3>
+                                        <p className="text-neutral-500 text-xs sm:text-sm font-light">Crafting something interesting.</p>
                                     </div>
                                 ) : (
                                     <>
-                                        <div className="relative h-48 md:h-60 w-full overflow-hidden">
+                                        <div className="relative h-44 sm:h-48 md:h-60 w-full overflow-hidden">
                                             <img
                                                 src={project.logo}
                                                 alt={project.name}
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0f] via-transparent to-transparent opacity-80" />
-                                            <div className="absolute top-4 left-4">
-                                                <span className="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-white/10 text-[9px] uppercase font-bold tracking-wider text-cyan-400">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-80" />
+                                            <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
+                                                <span className="px-2 sm:px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md border border-neutral-700/50 text-[9px] sm:text-[10px] uppercase font-medium tracking-wider text-neutral-300">
                                                     {project.category}
                                                 </span>
                                             </div>
                                         </div>
 
-                                        <div className="p-6 md:p-8 flex flex-col flex-grow">
-                                            <div className="flex justify-between items-center mb-4">
-                                                <h2 className="text-xl md:text-2xl font-bold tracking-tight">
+                                        <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-grow">
+                                            <div className="flex justify-between items-start sm:items-center mb-4 gap-3">
+                                                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-neutral-100">
                                                     {project.name}
                                                 </h2>
-                                                <div className="flex gap-2">
+                                                <div className="flex gap-2 flex-shrink-0">
                                                     <Tooltip>
                                                         <TooltipTrigger asChild>
-                                                            <a href={project.github} target="_blank" className="p-2 rounded-lg bg-zinc-900/50 text-zinc-500 hover:text-white hover:bg-zinc-800 transition-all">
-                                                                <FaGithub size={16} />
+                                                            <a 
+                                                                href={project.github} 
+                                                                target="_blank" 
+                                                                rel="noreferrer"
+                                                                className="p-1.5 sm:p-2 rounded-lg bg-neutral-800/50 text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all"
+                                                            >
+                                                                <FaGithub size={14} className="sm:w-4 sm:h-4" />
                                                             </a>
                                                         </TooltipTrigger>
-                                                        <TooltipContent className="bg-white text-black border-white/10 text-[10px]">Source Code</TooltipContent>
+                                                        <TooltipContent className="bg-white text-black text-xs font-medium">Source Code</TooltipContent>
                                                     </Tooltip>
 
                                                     <Tooltip>
                                                         <TooltipTrigger asChild>
-                                                            <a href={project.website} target="_blank" className="p-2 rounded-lg bg-zinc-900/50 text-zinc-500 hover:text-cyan-400 hover:bg-zinc-800 transition-all">
-                                                                <FaGlobe size={16} />
+                                                            <a 
+                                                                href={project.website} 
+                                                                target="_blank"
+                                                                rel="noreferrer" 
+                                                                className="p-1.5 sm:p-2 rounded-lg bg-neutral-800/50 text-neutral-400 hover:text-neutral-100 hover:bg-neutral-800 transition-all"
+                                                            >
+                                                                <FaGlobe size={14} className="sm:w-4 sm:h-4" />
                                                             </a>
                                                         </TooltipTrigger>
-                                                        <TooltipContent className="bg-white text-black border-white/10 text-[10px]">Live Demo</TooltipContent>
+                                                        <TooltipContent className="bg-white text-black text-xs font-medium">Live Demo</TooltipContent>
                                                     </Tooltip>
                                                 </div>
                                             </div>
 
-                                            <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 flex-grow line-clamp-3 md:line-clamp-none font-light">
+                                            <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6 flex-grow line-clamp-3 md:line-clamp-4 font-normal">
                                                 {project.description}
                                             </p>
 
-                                            <div className="pt-4 border-t border-white/[0.03]">
-                                                <div className="flex flex-wrap gap-3 hover:cursor-pointer">
+                                            <div className="pt-4 border-t border-neutral-800/50">
+                                                <div className="flex flex-wrap gap-2 sm:gap-3">
                                                     {project.tech?.map((t, i) => (
                                                         <Tooltip key={i}>
-                                                            <TooltipTrigger>
-                                                                <t.Icon className={`text-lg md:text-xl ${t.color} transition-all hover:scale-125`} />
+                                                            <TooltipTrigger asChild>
+                                                                <div className="cursor-default">
+                                                                    <t.Icon className={`text-base hover:cursor-pointer sm:text-lg md:text-xl ${t.color} transition-all hover:scale-110`} />
+                                                                </div>
                                                             </TooltipTrigger>
-                                                            <TooltipContent className="bg-white text-black  border-white/10 text-[10px]">{t.name}</TooltipContent>
+                                                            <TooltipContent className="bg-white text-black text-xs font-medium">{t.name}</TooltipContent>
                                                         </Tooltip>
                                                     ))}
                                                 </div>
@@ -213,8 +231,8 @@ export default function AllProjects() {
                     </AnimatePresence>
                 </motion.div>
 
-                <footer className="mt-20 md:mt-32 pt-8 border-t border-white/5 text-center">
-                    <p className="text-zinc-600 text-[10px] md:text-xs uppercase tracking-[0.2em]">
+                <footer className="mt-16 sm:mt-20 md:mt-32 pt-6 sm:pt-8 border-t border-neutral-800/50 text-center">
+                    <p className="text-neutral-600 text-[10px] sm:text-xs uppercase tracking-[0.2em]">
                         &copy; 2026 Coded_Mind__ &bull; All Systems Operational
                     </p>
                 </footer>
