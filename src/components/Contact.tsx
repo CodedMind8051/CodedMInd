@@ -3,7 +3,7 @@ import { FiSend, FiMail } from "react-icons/fi";
 import { SiWhatsapp } from "react-icons/si";
 import { CheckCircle, Loader2 } from "lucide-react";
 import { useRef, useEffect, useState } from "react";
-// @ts-ignore
+
 import emailjs from '@emailjs/browser';
 import {
   Dialog,
@@ -61,7 +61,7 @@ export default function Contact({ Btn }: { Btn: any }) {
     <section className="w-full px-4 py-16 sm:py-20 flex justify-center items-center bg-[#050505]">
       <Toaster position="top-center" />
 
-      {/* Premium Main Card */}
+      
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -69,12 +69,12 @@ export default function Contact({ Btn }: { Btn: any }) {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         className="relative w-full max-w-2xl bg-neutral-900/40 backdrop-blur-sm border border-neutral-800/50 p-6 sm:p-10 md:p-16 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg"
       >
-        {/* Subtle Background Gradient */}
+        
         <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-neutral-700/5 blur-[80px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 flex flex-col items-center text-center gap-6 sm:gap-8">
           <div className="space-y-2 sm:space-y-3">
-            {/* Premium Heading */}
+            
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
               <span className="text-neutral-100">
                 Ready to{" "}
@@ -83,12 +83,12 @@ export default function Contact({ Btn }: { Btn: any }) {
                 <span className="text-neutral-100">
                   Collaborate?
                 </span>
-                {/* Subtle glow */}
+                
                 <div className="absolute inset-0 bg-neutral-400/10 blur-xl -z-10" />
               </span>
             </h2>
 
-            {/* Premium Description */}
+            
             <p className="text-neutral-400 text-xs sm:text-sm md:text-base leading-relaxed max-w-sm sm:max-w-md mx-auto font-light">
               Have a project in mind or just want to connect?
               <span className="text-neutral-300"> Let's talk.</span>
@@ -106,7 +106,7 @@ export default function Contact({ Btn }: { Btn: any }) {
               </button>
             </DialogTrigger>
 
-            {/* Premium Dialog */}
+            
             <DialogContent className="bg-neutral-900 border-neutral-800/50 text-white w-[95vw] max-w-lg rounded-2xl p-0 overflow-hidden">
               <div className="max-h-[90vh] overflow-y-auto p-6 md:p-8 no-scrollbar">
                 <DialogHeader className="mb-6 text-left">
@@ -163,7 +163,7 @@ export default function Contact({ Btn }: { Btn: any }) {
             </DialogContent>
           </Dialog>
 
-          {/* Premium Footer Info */}
+          
           <div className="flex flex-col sm:flex-row  justify-center items-center gap-3 sm:gap-8 text-neutral-500 text-xs sm:text-sm pt-4 border-t border-neutral-800/30 w-full">
             <div className="flex items-center gap-2">
               <FiMail className="text-neutral-400" />

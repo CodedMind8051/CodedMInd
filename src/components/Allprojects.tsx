@@ -59,14 +59,14 @@ export default function AllProjects() {
 
     return (
         <div className="min-h-screen bg-neutral-950 text-white selection:bg-neutral-700 selection:text-neutral-100 overflow-x-hidden">
-            {/* Subtle Background Gradient */}
+            
             <div className="fixed inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-br from-neutral-900 via-neutral-950 to-neutral-950" />
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-800/5 via-transparent to-transparent" />
             </div>
 
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-20">
-                {/* Navbar Area */}
+                
                 <div className="flex flex-col gap-5 sm:gap-6 mb-10 sm:mb-12 md:mb-16">
                     <div className="flex items-center justify-between">
                         <Link to="/">
@@ -83,7 +83,7 @@ export default function AllProjects() {
                         </Link>
                     </div>
 
-                    {/* Filter Bar - Premium Mobile Optimized */}
+                    
                     <div className="flex items-center gap-3 w-full">
                         <div className="p-2 sm:p-2.5 rounded-xl bg-neutral-900/50 border border-neutral-800/50 text-neutral-500 shrink-0">
                             <FaFilter size={14} />
@@ -106,7 +106,7 @@ export default function AllProjects() {
                     </div>
                 </div>
 
-                {/* Header Text */}
+                
                 <motion.header
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -121,7 +121,7 @@ export default function AllProjects() {
                     </p>
                 </motion.header>
 
-                {/* Projects Grid */}
+                
                 <motion.div
                     layout
                     variants={containerVariants}

@@ -52,7 +52,7 @@ export default function Projects() {
     return (
         <TooltipProvider>
             <section className="relative w-full py-16 sm:py-20 md:py-24 flex flex-col items-center justify-center bg-[#050505] text-white overflow-hidden">
-                {/* Header Section */}
+                
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,7 @@ export default function Projects() {
                     <div className="h-[2px] w-20 sm:w-24 bg-gradient-to-r from-transparent via-neutral-600 to-transparent rounded-full" />
                 </motion.div>
 
-                {/* Grid Container */}
+                
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -83,7 +83,7 @@ export default function Projects() {
                             className="group relative bg-neutral-900/40 backdrop-blur-sm border border-neutral-800/50 rounded-2xl overflow-hidden flex flex-col h-full hover:border-neutral-700/50 transition-all duration-500 shadow-lg"
                         >
                             {project.isComingSoon ? (
-                                /* Premium Coming Soon Style */
+                                
                                 <div className="relative h-full min-h-[380px] sm:min-h-[420px] flex flex-col items-center justify-center p-8 text-center bg-gradient-to-b from-neutral-800/10 to-transparent">
                                     <div className="relative mb-6">
                                         <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-xl bg-neutral-800/30 flex items-center justify-center border border-neutral-700/30">
@@ -101,7 +101,7 @@ export default function Projects() {
                                 </div>
                             ) : (
                                 <>
-                                    {/* Active Project Image */}
+                                    
                                     <div className="relative h-48 sm:h-52 md:h-64 w-full overflow-hidden">
                                         <img
                                             src={project.logo}
@@ -114,7 +114,7 @@ export default function Projects() {
                                         </div>
                                     </div>
 
-                                    {/* Content Section */}
+                                    
                                     <div className="p-5 sm:p-6 md:p-8 flex flex-col flex-grow">
                                         <div className="flex justify-between items-start sm:items-center mb-4 gap-3">
                                             <h2 className="text-lg sm:text-xl md:text-2xl font-semibold tracking-tight text-neutral-100 group-hover:text-neutral-300 transition-colors">
@@ -180,7 +180,7 @@ export default function Projects() {
                     ))}
                 </motion.div>
 
-                {/* Footer Link */}
+                
                 <motion.div 
                     initial={{ opacity: 0 }} 
                     whileInView={{ opacity: 1 }} 

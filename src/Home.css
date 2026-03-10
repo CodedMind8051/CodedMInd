@@ -1,26 +1,26 @@
-/* Update your App.css with these specific rules */
+
 
 #root {
   width: 100%;
-  /* Removed position: absolute as it causes overflow issues on some mobile browsers */
+  
 }
 
 body {
   margin: 0;
   padding: 0;
-  /* Crucial: Prevents the horizontal "zoom/shake" during animations */
+  
   overflow-x: hidden; 
   background-color: #050505;
 }
 
 html {
   scroll-behavior: smooth;
-  /* Prevents iOS from adding extra width */
+  
   width: 100vw;
   overflow-x: hidden;
 }
 
-/* Ensure images and large components don't break the container */
+
 img, video, canvas {
   max-width: 100%;
   height: auto;

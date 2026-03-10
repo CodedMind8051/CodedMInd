@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Film, Music, Quote as QuoteIcon, Sparkles, ChevronRight, ArrowLeft, ExternalLink, Star } from "lucide-react";
 
-// --- Data ---
+
 const FAVORITES = {
     movies: [
         { title: "Attack on Titan", year: "2013", genre: "Anime", rating: "9.1", link: "https://www.imdb.com/title/tt2560140/" },
@@ -115,7 +115,7 @@ const QUOTES = [
     { text: "Everything in this world is just a game of chess.", author: "Lelouch", source: "Code Geass" },
 ];
 
-// --- Logic ---
+
 const getQuoteOfTheDay = () => {
     const randomIndex = Math.floor(Math.random() * QUOTES.length);
     return QUOTES[randomIndex];
@@ -193,7 +193,7 @@ const PersonalSection = () => {
     );
 };
 
-// --- Sub-Components ---
+
 
 const CategoryCard = ({ icon, title, onClick }: any) => (
     <motion.div whileHover={{ x: 4 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
@@ -241,7 +241,7 @@ const QuoteCard = ({ quote }: any) => (
             <div className="w-full flex justify-end items-center gap-2">
                 <div className="h-px w-4 bg-zinc-800" />
                 <cite className="not-italic text-[10px] uppercase tracking-widest font-bold text-zinc-600">
-                    {quote.author} <span className="ml-1 opacity-50">// {quote.source}</span>
+                    {quote.author} <span className="ml-1 opacity-50"> {quote.source}</span>
                 </cite>
             </div>
         </CardContent>

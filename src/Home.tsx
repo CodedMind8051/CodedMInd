@@ -49,10 +49,10 @@ function Home() {
         <Navbar />
       </motion.header>
 
-      {/* Adjusted Main Padding: from pt-40 to pt-24/32 */}
+      
       <main className="pt-24 md:pt-30 px-3 max-w-[1200px] mx-auto">
         <motion.section
-          className='flex flex-col items-center mb-12' // Reduced from mb-20
+          className='flex flex-col items-center mb-12'
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -80,7 +80,7 @@ function Home() {
               </div>
             </h1>
 
-            {/* Optional: Subtle decorative line */}
+            
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
@@ -88,7 +88,7 @@ function Home() {
               className="w-16 sm:w-20 md:w-24 h-px bg-gradient-to-r from-transparent via-neutral-600 to-transparent mx-auto mt-8 sm:mt-10 md:mt-12"
             />
           </motion.div>
-          {/* Reduced mt-16 to mt-10 */}
+          
           <motion.div variants={fadeInUp} className='mt-0 w-full flex justify-center'>
             <Techstack />
           </motion.div>
@@ -113,7 +113,7 @@ function Home() {
           </motion.div>
         </motion.section>
 
-        {/* REDUCED GAP: Switched from space-y-32 to space-y-12 */}
+        
         <div className="space-y-12">
           <section id='About'>
             <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-50px' }}>

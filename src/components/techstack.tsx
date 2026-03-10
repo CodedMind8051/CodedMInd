@@ -30,7 +30,7 @@ function TechStack() {
     <section className="relative w-full py-16 sm:py-20 md:py-24 px-4 sm:px-6 overflow-hidden bg-[#050505]">
       <div className="max-w-6xl mx-auto relative z-10">
 
-        {/* --- PREMIUM HEADING --- */}
+        
         <div className="flex flex-col items-center mb-12 sm:mb-16 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -41,7 +41,7 @@ function TechStack() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-neutral-100">
               Tech Arsenal
             </h2>
-            {/* Subtle Underline */}
+            
             <motion.div
               initial={{ width: 0 }}
               whileInView={{ width: '100%' }}
@@ -54,7 +54,7 @@ function TechStack() {
           </p>
         </div>
 
-        {/* --- DESKTOP GRID --- */}
+        
         <div className="hidden sm:flex flex-wrap justify-center gap-6 md:gap-8">
           {allTech.map((tech) => (
             <TechCard
@@ -66,9 +66,9 @@ function TechStack() {
           ))}
         </div>
 
-        {/* --- MOBILE 4+2 GRID --- */}
+        
         <div className="sm:hidden flex flex-col items-center gap-6">
-          {/* Row 1: 4 Icons */}
+          
           <div className="grid grid-cols-4 gap-3 w-full max-w-sm">
             {allTech.filter(t => t.mobile).slice(0, 4).map((tech) => (
               <TechCard
@@ -79,7 +79,7 @@ function TechStack() {
               />
             ))}
           </div>
-          {/* Row 2: 2 Icons centered */}
+          
           <div className="grid grid-cols-2 gap-3 w-[55%] max-w-[200px]">
             {allTech.filter(t => t.mobile).slice(4, 6).map((tech) => (
               <TechCard
@@ -118,7 +118,7 @@ function TechCard({ tech, isHovered, onHover }: any) {
           }
         `}
       >
-        {/* Subtle Colored Glow */}
+        
         <div
           className="absolute inset-0 rounded-xl opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-20"
           style={{ backgroundColor: tech.color }}
@@ -130,7 +130,7 @@ function TechCard({ tech, isHovered, onHover }: any) {
           className="relative z-10 transition-all duration-500 group-hover:scale-110"
         />
 
-        {/* --- PREMIUM TOOLTIP --- */}
+        
         <AnimatePresence>
           {isHovered && (
             <motion.div

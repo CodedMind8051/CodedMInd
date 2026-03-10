@@ -3,7 +3,7 @@ import Me from '../assets/Me.png'
 import { SiReact, SiGithub, SiTailwindcss, SiFigma, SiPostman, SiNextdotjs,SiVercel, SiDocker, SiDjango, SiFastapi, SiYoutube, SiInstagram, SiX, SiAmazonwebservices, SiNodedotjs, SiPython, SiExpress, SiPostgresql, SiMongodb, SiShadcnui } from 'react-icons/si'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../components/ui/tooltip"
 
-// Premium entrance animation
+
 const sectionVar: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -53,7 +53,7 @@ function AboutMe() {
         { icon: <SiX className="text-white" />, label: "X", link: "https://x.com/coded_mind__?t=_eqs2HM2Huw_Vf2PPQMPsg&s=09" },
     ];
 
-    // Premium matte card class
+    
     const matteBoxClass = "w-full bg-neutral-900/40 backdrop-blur-sm p-6 sm:p-7 rounded-xl border border-neutral-800/50 shadow-lg hover:border-neutral-700/50 transition-all duration-500";
 
     return (
@@ -65,13 +65,13 @@ function AboutMe() {
                 variants={sectionVar}
                 className='flex flex-col w-full max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 items-center sm:items-start overflow-hidden'
             >
-                {/* Header */}
+                
                 <motion.div variants={itemVar} className='mb-10 sm:mb-12 w-full'>
                     <h3 className="text-xs sm:text-sm font-medium tracking-[0.25em] text-neutral-500 uppercase mb-2">About</h3>
                     <h1 className="font-semibold text-4xl sm:text-5xl md:text-6xl text-neutral-100 tracking-tight">Me</h1>
                 </motion.div>
 
-                {/* Profile Section */}
+                
                 <div className='flex flex-col lg:flex-row gap-10 sm:gap-12 mb-16 sm:mb-20 w-full items-center lg:items-start'>
                     <motion.div variants={itemVar} className='w-full lg:w-1/2'>
                         <motion.img
@@ -140,7 +140,7 @@ function AboutMe() {
                     </motion.div>
                 </div>
 
-                {/* Details Section - Premium Matte Cards */}
+                
                 <div className='flex flex-col md:grid md:grid-cols-2 gap-4 sm:gap-5 w-full'>
                     <motion.div variants={itemVar} className={matteBoxClass}>
                         <h1 className='font-semibold text-lg sm:text-xl text-neutral-100 border-l-[3px] border-neutral-400 pl-4 mb-3'>Beyond the Web</h1>
@@ -165,7 +165,7 @@ function AboutMe() {
                     </motion.div>
                 </div>
 
-                {/* Expertise Footer - Fixed for Mobile */}
+                
                 <motion.div variants={itemVar} className='mt-12 max-[650px]:ml-6 sm:mt-16 pt-8 sm:pt-10 border-t border-neutral-800/50 w-full'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8'>
                         <div className='flex flex-col gap-1.5'>

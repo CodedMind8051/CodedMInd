@@ -55,7 +55,7 @@
 body {
   margin: 0;
   display: flex;
-  /* place-items: center; */
+  
   min-width: 320px;
   min-height: 100vh;
 }
@@ -116,7 +116,7 @@ button:focus-visible {
   }
 }
 
-/* Premium scrollbar styling */
+
 
 ::-webkit-scrollbar-track {
   background: #0e0d0d;
@@ -125,7 +125,7 @@ button:focus-visible {
 
 
 
-/* Selection styling */
+
 ::selection {
   background: #8603dc;
   color: white;
@@ -197,11 +197,11 @@ html {
 .icon {
   font-size: 20px;
   opacity: 0;
-  transform: translateX(-5px);  /* tiny slide-in feel */
+  transform: translateX(-5px);
   transition: 
     opacity 0.25s ease,
     transform 0.25s ease;
-  pointer-events: none; /* so hidden state doesn't interfere */
+  pointer-events: none;
 }
 
 .Talk:hover .icon {
