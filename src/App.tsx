@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Home from "./Home";
 import AllProjects from "./components/Allprojects";
 
-// 1. Create a helper component
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -11,7 +11,7 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return null; // This component doesn't render anything visually
+  return null; 
 }
 
 function App() {
